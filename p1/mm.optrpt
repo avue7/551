@@ -1,0 +1,147 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+Begin optimization report for: main(void)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at mm.c(109,3) inlined into mm.c(67,16)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at mm.c(113,7) inlined into mm.c(67,16)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at mm.c(111,5) inlined into mm.c(67,16)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at mm.c(111,5) inlined into mm.c(67,16)
+         remark #15301: PERMUTED LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at mm.c(111,5) inlined into mm.c(67,16)
+      <Alternate Alignment Vectorized Loop>
+      LOOP END
+
+      LOOP BEGIN at mm.c(111,5) inlined into mm.c(67,16)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at mm.c(134,3) inlined into mm.c(68,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at mm.c(137,5) inlined into mm.c(68,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   LOOP END
+
+   LOOP BEGIN at mm.c(137,5) inlined into mm.c(68,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   LOOP END
+LOOP END
+
+LOOP BEGIN at mm.c(76,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at mm.c(78,7)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:rand(void) (80:33) and call:rand(void) (81:33)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at mm.c(109,3) inlined into mm.c(86,16)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at mm.c(113,7) inlined into mm.c(86,16)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at mm.c(111,5) inlined into mm.c(86,16)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at mm.c(111,5) inlined into mm.c(86,16)
+         remark #15301: PERMUTED LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at mm.c(111,5) inlined into mm.c(86,16)
+      <Alternate Alignment Vectorized Loop>
+      LOOP END
+
+      LOOP BEGIN at mm.c(111,5) inlined into mm.c(86,16)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at mm.c(50,5)
+   remark #15536: loop was not vectorized: inner loop throttling prevents vectorization of this outer loop. Refer to inner loop message for more details.   [ mm.c(52,7) ]
+
+   LOOP BEGIN at mm.c(52,7)
+      remark #15523: loop was not vectorized: loop control variable col was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+LOOP END
+
+LOOP BEGIN at mm.c(58,5)
+   remark #15536: loop was not vectorized: inner loop throttling prevents vectorization of this outer loop. Refer to inner loop message for more details.   [ mm.c(60,7) ]
+
+   LOOP BEGIN at mm.c(60,7)
+      remark #15523: loop was not vectorized: loop control variable col was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: multiply_matrices(int *__restrict__, int *__restrict__, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at mm.c(109,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at mm.c(113,7)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at mm.c(111,5)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at mm.c(111,5)
+         remark #15301: PERMUTED LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at mm.c(111,5)
+      <Alternate Alignment Vectorized Loop>
+      LOOP END
+
+      LOOP BEGIN at mm.c(111,5)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: print_matrix(int *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at mm.c(134,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at mm.c(137,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   LOOP END
+
+   LOOP BEGIN at mm.c(137,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   LOOP END
+LOOP END
+===========================================================================

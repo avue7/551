@@ -126,6 +126,7 @@ void Enqueue(struct queue_s* q_p, int src, int mesg, int priority) {
    if (q_p->front_p == NULL) { /* Empty Queue */
       q_p->front_p = n_p;
       q_p->tail_p = n_p;
+<<<<<<< HEAD
    } else if (q_p->tail_p == q_p->front_p) {  // Only one item
       // If current priority has higher priority than store in front
       if (q_p->front_p->priority > n_p->priority)
@@ -160,6 +161,54 @@ void Enqueue(struct queue_s* q_p, int src, int mesg, int priority) {
         }
   }
   q_p->enqueued++;
+=======
+   } 
+   else 
+   {
+     if (q_p->tail_p == q_p->front_p) 
+     { // Only one item
+       // If current priority has higher priority than store in front
+       if (q_p->front_p->priority > n_p->priority)
+       {
+         //struct queue_node_s* enq_temp;
+         //enq_temp = q_p->tail_p;
+         //q_p->tail_p->next_p = enq_temp;
+         //free(enq_temp);
+         //q_p->tail_p = q_p->tail_p->next_p;
+         q_p->front_p = n_p;
+       }
+       else
+       {
+         //struct queue_node_s* tail_temp;
+         //tail_temp = q_p->tail_p;
+         //q_p->tail_p = n_p;
+         //free(tail_temp);
+         q_p->tail_p->next_p = n_p;
+         q_p->tail_p = q_p->tail_p->next_p;
+       }
+     }
+     else 
+     {
+       // If q_tail has a lower priority move it to q_tail->next_p
+       // and store the current n_p to q_p->tail_p
+       if (q_p->tail_p->priority > n_p->priority)
+       {
+         //struct queue_node_s* enq_temp;
+         // enq_temp = q_p->tail_p;         
+         //q_p->tail_p = n_p;
+         q_p->tail_p->next_p = q_p->tail_p;
+         //free(enq_temp);
+         q_p->tail_p = n_p;
+       }
+       else // current priority has less priority..store it in next node
+       {
+         q_p->tail_p->next_p = n_p;
+         q_p->tail_p = n_p;
+       }
+     }
+   }
+   q_p->enqueued++;
+>>>>>>> 3cc9f4fae9cc6f8a2f95b4d8a534fa994256a5e8
 }  /* Enqueue */
 
 int Dequeue(struct queue_s* q_p, int* src_p, int* mesg_p, int* priority_p) {

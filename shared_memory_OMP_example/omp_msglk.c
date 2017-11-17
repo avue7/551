@@ -54,7 +54,11 @@ int main(int argc, char* argv[]) {
    {
       int my_rank = omp_get_thread_num();
       int msg_number;
+<<<<<<< HEAD
       srandom(my_rank + time(0));
+=======
+      srandom(time(0));
+>>>>>>> 3cc9f4fae9cc6f8a2f95b4d8a534fa994256a5e8
 
       int priority = 0;
 
