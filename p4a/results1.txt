@@ -1,0 +1,8 @@
+
+User CPU time: 151.504000
+System CPU time: 0.504000
+maximum resident set size: 1001336
+soft page faults: 1809
+hard page faults: 0
+
+L^2-norm: 6.7386577487e-04
